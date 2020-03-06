@@ -1,0 +1,17 @@
+<h1 class="animated fadeIn">Buscando: <small>{{ termino | uppercase }}</small></h1>
+<h1>Héroes <small>Marvel y DC</small></h1>
+<hr>
+
+<div class="row animated fadeIn fast" *ngIf="heroes.length == 0">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            No existen resultados con el término: {{ termino }}
+        </div>
+    </div>
+</div>
+
+<div class="card-columns">
+
+    <app-heroe-tarjeta [heroe]="heroe" [index]="heroe.idx" *ngFor="let heroe of heroes"></app-heroe-tarjeta>
+
+</div>
